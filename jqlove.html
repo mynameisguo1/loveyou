@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>七夕表白</title>
+		<script src="jquery_1_11_1min.js"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: url(img/bg.jpg) center top;
+			}
+			#div1{
+				width: 420px;
+				margin: 50px auto 0px;
+				box-shadow: 0px 0px 10px #883a78;
+				border-radius: 10px;
+			}
+			#h1{
+				text-align: center;
+				color: crimson;
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+			#p1{
+				text-align: right;
+				font-size: 30px;
+				font-weight: bold;
+				color: crimson;
+				padding-bottom: 10px;
+				padding-top: 20px;
+				width: 400px;
+			}
+			#div2{
+				width: 380px;
+				margin: 0 auto;
+			}
+			.div5{
+				height: 300px;
+			}
+			#div-bg{
+				position: absolute;
+				top: 0;
+			}
+			#div-bg img{
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+		<div id="div4">
+			/**<br>
+			 * 2012-06-09,<br>
+			 * 2016-10-08.<br>
+			*/<br>
+			Here's a little story<br>
+			Boy name = Mr LI<br>
+			Girl name = Mrs ZHANG<br>
+			// Fall in love river. <br>
+			The boy love the girl;<br>
+			// They love each other.<br>
+			The girl loved the boy;<br>
+			// AS time goes on.<br>
+			The boy can not be separated the girl;<br>
+			// At the same time.<br>
+			The girl can not be separated the boy;<br>
+			// Both wind and snow all over the sky.<br>
+			// Whether on foot or 5 kilometers.<br>
+			The boy very happy;<br>
+			The girl is also very happy;<br>
+			// Whether it is right now<br>
+			// Still in the distant future.<br>
+			The boy has but one dream;<br>
+			// The boy wants the girl could well have been happy.<br>
+			<br>
+			<br>
+			I want to say:<br>
+			Baby, I love you forever;<br>
+		</div>
+		<div id="div3"></div>
+		</div>
+		<div id="div-bg">
+			<img src="img/1111.png" />
+		</div>
+	</body>
+	<script type="text/javascript">
+		var aa = function(){
+			var div = $('#div1');
+			var h1 = $('<h1>我爱你 某某某</h1>');
+			h1.attr('id','h1');
+			h1.appendTo(div);
+			var div1 = $('<div></div>');
+			div1.attr('id','div2');
+			div1.appendTo(div);
+			var div2 = $('<div></div>');
+			div2.attr('id','div5');
+			div2.appendTo(div1);
+			var div3 = $('#div3');
+			div3.appendTo(div2);
+			var h2 = $('<p>爱你的人</p>');
+			h2.attr('id','p1');
+			h2.appendTo(div);
+		}
+		aa();
+		$('#div4').css('display','none');
+		var content = $('#div4').html();
+		//alert(content);
+		var bb = content.length;
+		//alert(bb);
+//		var arr = [];
+//		for(var i = 0;i < bb;i++){
+//			arr[i] = content.substr(0,i);
+//		}
+		//alert(arr);
+		$('#div3').css('font-size','14px');
+		$('#div5').addClass('div5');
+		$('#div3').css('color','#666666');
+		var t = 0;
+		function cc(){
+			if(t < bb){
+				if(content.substr(t,4) == '<br>'){
+					t += 3;
+				}
+				$('#div3').html(content.substr(0,t) + '<span id="xiabiao">_</span>');
+				t++;
+				if(t%2 == 1){
+					$('#xiabiao').css('opacity','0');
+				}else{
+					$('#xiabiao').css('opacity','1');
+				}
+			}else{
+				clearInterval(timer);
+//				$('#div3').empty();
+//				t = 0;
+			}
+			if($('#div3').height() > 300){
+				$('#div5').removeClass('div5');
+				var ff = $('#div3').height() + 20 + 'px';
+				$('#div5').css('height','ff');	
+			}
+		}
+		var timer = setInterval(cc,100);
+	</script>
+</html>
